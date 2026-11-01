@@ -1,0 +1,43 @@
+/* ===== Gaya dasar yang dipakai semua halaman ===== */
+:root{--ink:#6b3f4f;--rose:#d9628f;--rose2:#f2a0bd;--cream:#fffaf6;--lav:#e3d6fb;--butter:#fde7a8}
+*{box-sizing:border-box;margin:0}
+html,body{height:100%}
+body{font-family:'DM Sans',sans-serif;color:var(--ink);overflow:hidden;
+  background:radial-gradient(circle at 20% 10%,#ffe3ec,transparent 55%),linear-gradient(160deg,#ffeef3,#f6e8fb)}
+
+.deco{position:fixed;z-index:1;pointer-events:none;color:var(--rose2);animation:float 6s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-10px) rotate(8deg)}}
+
+/* halaman: konten selalu ke tengah, tapi bisa di-scroll kalau layar pendek */
+.page{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;align-items:center;gap:1.6rem;padding:1.2rem;overflow-y:auto;
+  animation:masuk .8s cubic-bezier(.2,.9,.3,1) both}
+.page>:first-child{margin-top:auto}.page>:last-child{margin-bottom:auto}
+@keyframes masuk{from{opacity:0;transform:translateY(26px) scale(.97)}}
+body.keluar .page{animation:keluar .55s ease-in forwards;pointer-events:none}
+@keyframes keluar{to{opacity:0;transform:translateY(-40px) scale(.95)}}
+
+#confetti{position:fixed;inset:0;z-index:50;pointer-events:none}
+.pager{position:fixed;bottom:14px;left:50%;transform:translateX(-50%);z-index:3;font-size:.72rem;font-weight:700;letter-spacing:.25em;color:#c98aa5}
+.kembali{position:fixed;top:16px;left:16px;z-index:5;border:0;cursor:pointer;font:700 .75rem 'DM Sans';color:var(--rose);
+  background:rgba(255,255,255,.75);padding:.5rem .9rem;border-radius:99px;box-shadow:0 2px 8px rgba(150,70,110,.15)}
+
+/* kartu krem + selotip */
+.card{position:relative;width:min(92vw,520px);background:var(--cream);border-radius:34px;padding:2.4rem 1.6rem 1.4rem;text-align:center;
+  box-shadow:0 0 0 6px rgba(255,255,255,.55),0 30px 60px rgba(180,80,120,.2)}
+.tape{position:absolute;top:-8px;width:90px;height:24px;opacity:.9}
+.t1{left:22px;background:var(--butter);transform:rotate(-6deg)}
+.t2{right:22px;background:var(--lav);transform:rotate(5deg)}
+.eyebrow{font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;font-weight:700;color:#c46a90;margin-bottom:.5rem}
+
+/* tombol */
+.btn{border:0;cursor:pointer;font:700 .9rem 'DM Sans';color:#fff;padding:.75rem 1.6rem;border-radius:999px;
+  background:linear-gradient(180deg,#f2a0bd,#d9628f);box-shadow:0 4px 0 #b84a76;transition:transform .15s}
+.btn:active{transform:translateY(3px);box-shadow:0 1px 0 #b84a76}
+.btn:disabled{opacity:.4;cursor:default}
+.cta{border:0;cursor:pointer;font:700 1rem 'DM Sans';color:#fff;padding:.95rem 2rem;border-radius:20px;width:min(100%,300px);
+  background:linear-gradient(180deg,#f2a0bd,#d9628f);box-shadow:0 5px 0 #b84a76,0 14px 20px rgba(217,98,143,.3);transition:transform .15s,box-shadow .15s}
+.cta:hover{transform:translateY(-2px)}
+.cta:active{transform:translateY(4px);box-shadow:0 1px 0 #b84a76}
+.cta.ready{animation:wiggle 1.6s ease-in-out infinite}
+@keyframes wiggle{0%,100%{transform:rotate(0)}10%{transform:rotate(-3deg) scale(1.04)}20%{transform:rotate(3deg) scale(1.04)}30%{transform:rotate(0)}}
+@media (prefers-reduced-motion:reduce){*{transition-duration:.01s!important;animation-duration:.01s!important;animation-iteration-count:1!important}}

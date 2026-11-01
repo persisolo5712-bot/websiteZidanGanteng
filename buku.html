@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@400;500;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/dasar.css">
+<link rel="stylesheet" href="css/background.css">
+<title>Buku Kenangan 📖</title>
+<link rel="stylesheet" href="css/buku.css">
+</head>
+<body data-page="4">
+<button class="kembali" data-ke="ucapan.html">‹ kembali</button>
+<main class="page">
+  <div class="scene"><div class="book" id="book"><div class="shadow"></div></div></div>
+  <div class="nav">
+    <button class="btn" id="prev">‹ Balik</button>
+    <span class="count" id="count">00 / 00</span>
+    <button class="btn" id="next">Lanjut ›</button>
+  </div>
+  <p class="note">klik halaman atau pakai panah ← → buat membalik buku</p>
+</main>
+<script src="js/config.js"></script>
+<script src="js/dasar.js"></script>
+<script src="js/bg/utils.js"></script>
+<script src="js/bg/kucing-pesawat.js"></script>
+<script src="js/bg/roket.js"></script>
+<script src="js/bg/tuktuk.js"></script>
+<script src="js/bg/kereta.js"></script>
+<script src="js/bg/burung.js"></script>
+<script src="js/bg/hiasan.js"></script>
+<script src="js/buku.js"></script>
+<script>Konfeti.burst(innerWidth / 2, innerHeight * .85, 70, .9);</script>
+</body>
+</html>

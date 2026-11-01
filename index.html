@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@400;500;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/dasar.css">
+<link rel="stylesheet" href="css/background.css">
+<title>Happy Birthday! 🎂</title>
+<link rel="stylesheet" href="css/intro.css">
+</head>
+<body data-page="1">
+<div id="balloons" aria-hidden="true"></div>
+<main class="page">
+  <section class="card" id="card">
+    <div class="garland" id="garland" aria-hidden="true"></div>
+    <i class="tape t1"></i><i class="tape t2"></i>
+    <p class="eyebrow">✦ a little birthday surprise ✦</p>
+    <svg class="cake" id="cake" viewBox="0 0 180 160" role="img" aria-label="Kue ulang tahun dengan tiga lilin">
+      <ellipse cx="90" cy="148" rx="80" ry="10" fill="#ecc9d8"/>
+      <rect x="22" y="96" width="136" height="50" rx="12" fill="#f27fa5"/>
+      <rect x="22" y="96" width="136" height="14" fill="#fff4f0"/>
+      <g fill="#fff4f0"><circle cx="32" cy="110" r="10"/><circle cx="51" cy="110" r="10"/><circle cx="70" cy="110" r="10"/><circle cx="89" cy="110" r="10"/><circle cx="108" cy="110" r="10"/><circle cx="127" cy="110" r="10"/><circle cx="146" cy="110" r="10"/></g>
+      <rect x="46" y="62" width="88" height="36" rx="10" fill="#ffc2d6"/>
+      <rect x="46" y="62" width="88" height="10" fill="#fff4f0"/>
+      <g fill="#fff4f0"><circle cx="56" cy="72" r="9"/><circle cx="74" cy="72" r="9"/><circle cx="92" cy="72" r="9"/><circle cx="110" cy="72" r="9"/><circle cx="126" cy="72" r="9"/></g>
+      <g><rect x="40" y="124" width="6" height="3" rx="1" fill="#fde7a8"/><rect x="64" y="130" width="6" height="3" rx="1" fill="#c9b6f2"/><rect x="98" y="122" width="6" height="3" rx="1" fill="#a9dcf0"/><rect x="128" y="130" width="6" height="3" rx="1" fill="#fde7a8"/><rect x="82" y="86" width="6" height="3" rx="1" fill="#f27fa5"/><rect x="108" y="88" width="6" height="3" rx="1" fill="#c9b6f2"/></g>
+      <rect x="65" y="40" width="6" height="23" rx="2" fill="#c9b6f2"/><rect x="87" y="40" width="6" height="23" rx="2" fill="#fde7a8"/><rect x="109" y="40" width="6" height="23" rx="2" fill="#a9dcf0"/>
+      <g class="flame" style="transform-origin:68px 40px"><path d="M68 22 q8 9 0 18 q-8 -9 0 -18z" fill="#ffb347"/><path d="M68 29 q3 5 0 10 q-3 -5 0 -10z" fill="#fff3b0"/></g>
+      <g class="flame" style="transform-origin:90px 40px"><path d="M90 22 q8 9 0 18 q-8 -9 0 -18z" fill="#ffb347"/><path d="M90 29 q3 5 0 10 q-3 -5 0 -10z" fill="#fff3b0"/></g>
+      <g class="flame" style="transform-origin:112px 40px"><path d="M112 22 q8 9 0 18 q-8 -9 0 -18z" fill="#ffb347"/><path d="M112 29 q3 5 0 10 q-3 -5 0 -10z" fill="#fff3b0"/></g>
+    </svg>
+    <p class="kicker">today is all about you!</p>
+    <h1><span class="l1"></span><span class="l2" id="nama"></span></h1>
+    <p class="msg" id="msg">Hari ini adalah hari spesial seseorang yang luar biasa. Semoga banyak kebahagiaan, tawa, dan kejutan manis datang menghampiri kamu. 🎀</p>
+    <button class="cta" id="cta"><span id="ctaText">🕯️ Tiup lilinnya dulu!</span></button>
+    <p class="foot">made with lots of love ♡</p>
+  </section>
+</main>
+<script src="js/config.js"></script>
+<script src="js/dasar.js"></script>
+<script src="js/bg/utils.js"></script>
+<script src="js/bg/kucing-pesawat.js"></script>
+<script src="js/bg/roket.js"></script>
+<script src="js/bg/tuktuk.js"></script>
+<script src="js/bg/kereta.js"></script>
+<script src="js/bg/burung.js"></script>
+<script src="js/bg/hiasan.js"></script>
+<script src="js/intro.js"></script>
+</body>
+</html>

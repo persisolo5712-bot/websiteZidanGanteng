@@ -1,0 +1,36 @@
+/* ===== Page 1: intro ulang tahun ===== */
+.card{padding-top:3.2rem}
+.kicker{font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;font-weight:700;color:#c46a90;margin-top:.3rem}
+.cake{width:clamp(110px,26vw,150px);cursor:pointer;display:block;margin:0 auto;filter:drop-shadow(0 8px 8px rgba(180,80,120,.25));animation:bob 3s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-6px)}}
+.flame{animation:flick .35s ease-in-out infinite alternate;transition:opacity .3s,transform .3s}
+.flame:nth-of-type(2){animation-delay:.1s}.flame:nth-of-type(3){animation-delay:.2s}
+@keyframes flick{to{transform:scale(.88,1.1) rotate(4deg)}}
+.cake.out .flame{opacity:0;transform:scale(.2);animation:none}
+
+h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,8vw,3.1rem);line-height:1.05;margin:.3rem 0 .8rem}
+h1 span{display:block}
+.l2{color:var(--rose)}
+h1 .ch{display:inline-block;animation:drop .7s cubic-bezier(.3,1.5,.5,1) both;animation-delay:calc(var(--i)*45ms + .5s)}
+@keyframes drop{from{opacity:0;transform:translateY(-34px) rotate(-12deg)}}
+.msg{font-size:.88rem;line-height:1.6;color:#8d5a6e;max-width:40ch;margin:0 auto 1.2rem}
+.foot{font-size:.68rem;color:#c98aa5;margin-top:.8rem}
+
+/* garland HAPPY BIRTHDAY */
+.garland{z-index:3;position:absolute;left:0;right:0;top:-34px;height:70px;pointer-events:none}
+.garland svg{position:absolute;inset:0;overflow:visible}
+.flag{position:absolute;width:var(--fw);height:calc(var(--fw)*1.15);transform-origin:50% 0}
+.flag b{display:block;width:100%;height:100%;padding-top:14%;font:700 calc(var(--fw)*.46) 'Playfair Display',serif;color:#6b3f4f;text-align:center;
+  clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:50% 0;animation:sway 2.6s ease-in-out infinite alternate;animation-delay:calc(var(--i)*-.25s)}
+@keyframes sway{from{transform:rotate(-7deg)}to{transform:rotate(7deg)}}
+
+/* balon yang bisa dipecahin */
+#balloons{position:fixed;inset:0;z-index:2;pointer-events:none;overflow:hidden}
+.balloon{position:absolute;bottom:-160px;width:56px;height:70px;border-radius:50% 50% 48% 48%;pointer-events:auto;cursor:pointer;
+  background:radial-gradient(circle at 32% 28%,rgba(255,255,255,.75),transparent 28%),var(--c);box-shadow:inset -6px -8px 12px rgba(0,0,0,.08);
+  animation:rise var(--d) linear forwards}
+.balloon::before{content:"";position:absolute;bottom:-6px;left:50%;margin-left:-5px;border:5px solid transparent;border-bottom-color:var(--c);transform:rotate(180deg)}
+.balloon::after{content:"";position:absolute;top:100%;left:50%;width:1px;height:60px;background:rgba(150,90,110,.4)}
+@keyframes rise{to{transform:translate(var(--dx),-130vh)}}
+@media (max-height:700px){.card{padding-top:2.6rem}.cake{width:96px}.msg{margin-bottom:.8rem}}
+@media (prefers-reduced-motion:reduce){.balloon{display:none}}

@@ -1,0 +1,21 @@
+/* ===== Page 2: sandi tanggal lahir ===== */
+.sandi{width:min(92vw,480px);padding-top:2.2rem}
+.gembok{font-size:3rem;line-height:1;margin-bottom:.4rem;display:inline-block;filter:drop-shadow(0 6px 6px rgba(180,80,120,.25));animation:bob 3s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-5px)}}
+.gembok.goyang{animation:geleng .5s}
+.gembok.buka{animation:buka .8s cubic-bezier(.3,1.6,.5,1) both}
+@keyframes geleng{20%,60%{transform:translateX(-8px) rotate(-8deg)}40%,80%{transform:translateX(8px) rotate(8deg)}}
+@keyframes buka{from{transform:scale(.6) rotate(-20deg)}50%{transform:scale(1.4) rotate(10deg)}to{transform:scale(1.1)}}
+h2{font-family:'Playfair Display',serif;font-size:clamp(1.4rem,5.5vw,1.9rem);line-height:1.2;margin-bottom:.4rem}
+.sub{font-size:.8rem;color:#a77389;margin-bottom:1.2rem}
+.pilihan{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
+.opsi{border:2px dashed #f2a0bd;background:#fff;color:var(--ink);font:700 .95rem 'DM Sans';padding:1rem .6rem;border-radius:18px;cursor:pointer;
+  box-shadow:0 4px 0 #f5c2d3;transition:transform .15s,box-shadow .15s,background .2s;animation:muncul .5s both;animation-delay:calc(var(--i)*90ms + .3s)}
+@keyframes muncul{from{opacity:0;transform:translateY(14px) scale(.9)}}
+.opsi:hover:not(:disabled){transform:translateY(-3px) rotate(-1deg);background:#fff0f5}
+.opsi:active:not(:disabled){transform:translateY(3px);box-shadow:0 1px 0 #f5c2d3}
+.opsi.salah{background:#f3e9ee;color:#b5a0aa;text-decoration:line-through;border-color:#e0ced6;box-shadow:none;animation:geleng .5s}
+.opsi.benar{background:linear-gradient(180deg,#f2a0bd,#d9628f);color:#fff;border:2px solid #d9628f;box-shadow:0 4px 0 #b84a76;transform:scale(1.06)}
+.opsi:disabled:not(.benar):not(.salah){opacity:.35}
+.komentar{font-family:'Caveat',cursive;font-size:1.5rem;color:var(--rose);margin-top:1rem;min-height:1.6em}
+.hint{font-size:.78rem;color:#a77389;min-height:1.2em;margin-top:.2rem}

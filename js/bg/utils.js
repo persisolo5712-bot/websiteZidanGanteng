@@ -1,7 +1,8 @@
 /* ===== Alat bantu bareng buat semua animasi background ===== */
 window.BG = (() => {
   const layer = document.getElementById('bgLayer');
-  const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // default: animasi tetap jalan walau HP lagi 'kurangi animasi' (sering nyala sendiri pas hemat baterai)
+  const still = CONFIG.hormatiKurangiAnimasi && matchMedia('(prefers-reduced-motion: reduce)').matches;
   const rand = (a, b) => a + Math.random() * (b - a);
   const pick = arr => arr[Math.floor(Math.random() * arr.length)];
   // lebar sprite = sekian persen lebar layar, dibatasi min & max (px)

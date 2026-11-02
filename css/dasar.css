@@ -40,4 +40,11 @@ body.keluar .page{animation:keluar .55s ease-in forwards;pointer-events:none}
 .cta:active{transform:translateY(4px);box-shadow:0 1px 0 #b84a76}
 .cta.ready{animation:wiggle 1.6s ease-in-out infinite}
 @keyframes wiggle{0%,100%{transform:rotate(0)}10%{transform:rotate(-3deg) scale(1.04)}20%{transform:rotate(3deg) scale(1.04)}30%{transform:rotate(0)}}
-@media (prefers-reduced-motion:reduce){*{transition-duration:.01s!important;animation-duration:.01s!important;animation-iteration-count:1!important}}
+
+/* ===== Mode ringan (HP): buang efek yang berat ===== */
+.ringan .deco{animation:none}
+.ringan .cat-fly,.ringan .fly.tuktuk,.ringan .rocket img,.ringan .shadow{filter:none}
+.ringan .balloon{box-shadow:none}
+.ringan .card{box-shadow:0 0 0 4px rgba(255,255,255,.55),0 12px 24px rgba(180,80,120,.16)}
+.ringan .kertas{box-shadow:0 4px 8px rgba(150,70,110,.18)}
+.ringan .pol{box-shadow:0 3px 6px rgba(150,70,110,.2)}

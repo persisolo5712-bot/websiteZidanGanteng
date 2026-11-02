@@ -27,3 +27,14 @@
   .utama{grid-column:1/-1;order:-1}
   .kol{display:contents}
 }
+
+/* HP: dirapetin biar muat satu layar tanpa scroll */
+@media (max-width:760px){
+  .meja{gap:1rem .8rem;padding:.6rem 0}
+  .kertas{font-size:1rem;padding:1.1rem .8rem .7rem}
+  .kertas small{font-size:.9rem;margin-top:.3rem}
+  .utama{padding:1.3rem 1rem .9rem}
+  .utama h2{font-size:1.45rem}
+  .umur b{font-size:3.6rem}
+  .utama p.s{font-size:1.15rem}
+}

@@ -1,6 +1,9 @@
 /* ===== Dipakai semua halaman: background, confetti, pindah halaman, umur ===== */
 const BULAN = ['Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember'];
 const TOTAL_HAL = 4;
+/* HP / perangkat kentang -> efek dikurangi biar tetap mulus */
+const RINGAN = matchMedia('(max-width:700px)').matches || (navigator.hardwareConcurrency || 8) <= 4;
+if (RINGAN) document.documentElement.classList.add('ringan');
 
 const byId = id => document.getElementById(id);
 const acak = (a, b) => a + Math.random() * (b - a);
@@ -33,6 +36,7 @@ const Konfeti = (() => {
   let parts = [], jalan = false;
   const fit = () => { cv.width = innerWidth; cv.height = innerHeight; }; fit(); addEventListener('resize', fit);
   function burst(x, y, n = 110, power = 1) {
+    if (RINGAN) n = Math.round(n * .55);
     for (let i = 0; i < n; i++) parts.push({ x, y, vx: acak(-7, 7) * power, vy: acak(-14, -3) * power, r: acak(4, 8),
       c: pilih(warna), rot: acak(0, 6), vr: acak(-.3, .3), bulat: Math.random() < .3, life: acak(90, 160) });
     if (!jalan) { jalan = true; requestAnimationFrame(tick); }

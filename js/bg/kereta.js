@@ -5,7 +5,7 @@
 
   function chug() {
     const w = size(.26, 170, 360);
-    const t = sprite('img/kereta.png', w, 'ground');
+    const t = sprite('img/kereta.webp', w, 'ground');
     t.querySelector('img').animate(
       [{ transform: 'translateY(0)' }, { transform: 'translateY(-3px)' }],
       { duration: 380, iterations: Infinity, direction: 'alternate' });
@@ -16,7 +16,7 @@
 
   function konvoi() {
     const w = size(.16, 100, 200);
-    const k = sprite('img/kereta-mini.png', w);
+    const k = sprite('img/kereta-mini.webp', w);
     const y0 = rand(.08, .5) * innerHeight, steps = 8, kf = [];
     for (let i = 0; i <= steps; i++) {
       const px = innerWidth + w - (i / steps) * (innerWidth + w * 2);
@@ -26,5 +26,5 @@
   }
 
   every(chug, 45000, 60000, 18000);
-  every(konvoi, 30000, 45000, 10000);
+  if (!RINGAN) every(konvoi, 30000, 45000, 10000);
 })();

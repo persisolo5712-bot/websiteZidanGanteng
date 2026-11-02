@@ -6,10 +6,10 @@
   const jenis = ['bintang', 'bintang', 'confetti', 'confetti', 'confetti', 'jejak', 'roket'];
 
   function jatuh() {
-    if (layer.querySelectorAll('.hiasan').length > 14) return;
+    if (layer.querySelectorAll('.hiasan').length > (RINGAN ? 6 : 14)) return;
     const k = pick(jenis), n = 1 + Math.floor(rand(0, jumlah[k]));
     const w = k === 'roket' ? size(.035, 30, 50) : k === 'jejak' ? rand(24, 38) : rand(14, 28);
-    const el = sprite(`img/hiasan/${k}${n}.png`, w, 'hiasan');
+    const el = sprite(`img/hiasan/${k}${n}.webp`, w, 'hiasan');
     const x = rand(0, innerWidth - w);
     let kf, opt;
     if (k === 'roket') {
@@ -33,7 +33,7 @@
 
   function vespa() {                      // vespa hijau jalan ke kanan di dasar layar
     const w = rand(60, 80);
-    const v = sprite('img/hiasan/vespa1.png', w, 'ground');
+    const v = sprite('img/hiasan/vespa1.webp', w, 'ground');
     v.style.bottom = '4px';
     v.querySelector('img').animate([{ transform: 'translateY(0)' }, { transform: 'translateY(-3px)' }],
       { duration: 200, iterations: Infinity, direction: 'alternate' });
@@ -41,6 +41,6 @@
       { duration: rand(9000, 13000), easing: 'linear' }).onfinish = () => v.remove();
   }
 
-  every(jatuh, 700, 1400, 500);
+  every(jatuh, RINGAN ? 1400 : 700, RINGAN ? 2600 : 1400, 500);
   every(vespa, 20000, 35000, 12000);
 })();

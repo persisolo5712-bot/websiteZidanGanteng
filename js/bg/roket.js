@@ -1,10 +1,10 @@
 /* ===== Roket oranye meluncur ke atas sesekali ===== */
 (() => {
   const { layer, still, rand, size, sprite, puff, every } = BG;
-  if (!layer || still) return;
+  if (!layer || still || RINGAN) return;
   function launch() {
     const w = size(.05, 36, 64);
-    const r = sprite('img/roket.png', w, 'rocket');
+    const r = sprite('img/roket.webp', w, 'rocket');
     r.style.left = rand(innerWidth * .05, innerWidth * .9) + 'px';
     const dist = innerHeight + 320;
     const anim = r.animate([

@@ -1,7 +1,7 @@
 /* ===== Page 1: intro ulang tahun ===== */
 .card{padding-top:3.2rem}
 .kicker{font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;font-weight:700;color:#c46a90;margin-top:.3rem}
-.cake{width:clamp(110px,26vw,150px);cursor:pointer;display:block;margin:0 auto;filter:drop-shadow(0 8px 8px rgba(180,80,120,.25));animation:bob 3s ease-in-out infinite}
+.cake{width:clamp(110px,26vw,150px);cursor:pointer;display:block;margin:0 auto;animation:bob 3s ease-in-out infinite}
 @keyframes bob{50%{transform:translateY(-6px)}}
 .flame{animation:flick .35s ease-in-out infinite alternate;transition:opacity .3s,transform .3s}
 .flame:nth-of-type(2){animation-delay:.1s}.flame:nth-of-type(3){animation-delay:.2s}
@@ -33,4 +33,3 @@ h1 .ch{display:inline-block;animation:drop .7s cubic-bezier(.3,1.5,.5,1) both;an
 .balloon::after{content:"";position:absolute;top:100%;left:50%;width:1px;height:60px;background:rgba(150,90,110,.4)}
 @keyframes rise{to{transform:translate(var(--dx),-130vh)}}
 @media (max-height:700px){.card{padding-top:2.6rem}.cake{width:96px}.msg{margin-bottom:.8rem}}
-@media (prefers-reduced-motion:reduce){.balloon{display:none}}

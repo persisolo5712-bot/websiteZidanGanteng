@@ -28,7 +28,7 @@
 
   /* balon naik, klik buat pecahin */
   function balon() {
-    const wrap = byId('balloons'); if (wrap.children.length > 9) return;
+    const wrap = byId('balloons'); if (wrap.children.length > (RINGAN ? 5 : 9)) return;
     const b = document.createElement('div');
     b.className = 'balloon';
     b.style.cssText = `left:${acak(3, 92)}%;--c:${pilih(warna)};--d:${acak(11, 18)}s;--dx:${acak(-60, 60)}px`;
@@ -37,7 +37,7 @@
     wrap.appendChild(b);
   }
   for (let i = 0; i < 4; i++) setTimeout(balon, i * 700);
-  setInterval(balon, 2200);
+  setInterval(balon, RINGAN ? 3200 : 2200);
 
   /* tiup lilin -> tombol berubah jadi "Buka kejutan" */
   const cake = byId('cake'), cta = byId('cta'); let padam = false;

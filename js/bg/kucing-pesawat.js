@@ -4,7 +4,7 @@
   if (!layer) return;
   const cat = document.createElement('div');
   cat.className = 'cat-fly';
-  cat.innerHTML = '<span class="bubble">meow ♡</span><img src="img/kucing.png" alt="">';
+  cat.innerHTML = '<span class="bubble">meow ♡</span><img src="img/kucing.webp" alt="">';
   layer.appendChild(cat);
   const bubble = cat.querySelector('.bubble');
 

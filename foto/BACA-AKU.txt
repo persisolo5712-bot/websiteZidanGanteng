@@ -1,0 +1,4 @@
+Taruh foto kenangan di folder ini.
+Namanya harus berurutan: 1.jpg, 2.jpg, 3.jpg, ... sampai 15.jpg
+(format jpg / jpeg / png / webp boleh dicampur).
+Caption-nya diatur di js/config.js (bagian caption).

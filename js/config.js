@@ -1,5 +1,6 @@
 const CONFIG = {
   nama: 'Zidan Beton',
+  hormatiKurangiAnimasi: false,
   pengirim: 'dari zidan kontol ♡',
 
   lahir: { tgl: 5, bln: 11, thn: 2009 },

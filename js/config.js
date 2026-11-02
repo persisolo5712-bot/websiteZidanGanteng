@@ -7,7 +7,7 @@ const CONFIG = {
   pengirim: 'dari aku ♡',
 
   /* Tanggal lahir (dipakai buat sandi page 2 & hitung umur page 3) */
-  lahir: { tgl: 29, bln: 10, thn: 2006 },          // <-- GANTI SESUAI TANGGAL LAHIR ASLI
+  lahir: { tgl: 5, bln: 11, thn: 2009 },          // <-- GANTI SESUAI TANGGAL LAHIR ASLI
 
   /* Page 2: sandi */
   tanyaSandi: 'Ehh, sebelum lanjut… kamu lahir kapan sih? 🤔',

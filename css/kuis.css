@@ -1,0 +1,14 @@
+/* ===== Page 5: kuis kilat ===== */
+.kuis{width:min(92vw,480px);padding-top:2.2rem}
+.kuis h2{min-height:2.5em;display:flex;align-items:center;justify-content:center}
+.pil-wrap{display:grid;grid-template-columns:1fr;gap:.7rem;margin-top:.6rem}
+@media (min-width:420px){.pil-wrap{grid-template-columns:1fr 1fr}}
+.pil{border:2px dashed #f2a0bd;background:#fff;color:var(--ink);font:700 .95rem 'DM Sans',sans-serif;padding:.9rem .6rem;border-radius:18px;cursor:pointer;
+  box-shadow:0 4px 0 #f5c2d3;transition:transform .15s,background .2s;animation:muncul .5s both;animation-delay:calc(var(--i)*80ms)}
+@keyframes muncul{from{opacity:0;transform:translateY(12px) scale(.94)}}
+.pil:active{transform:translateY(3px)}
+.pil.kunci{pointer-events:none}
+.pil.benar{background:linear-gradient(180deg,#f2a0bd,#d9628f);color:#fff;border-color:#d9628f;box-shadow:0 4px 0 #b84a76}
+.pil.salah{background:#f3e9ee;color:#b5a0aa;text-decoration:line-through;border-color:#e0ced6;box-shadow:none;animation:geleng .45s}
+.pil.tunjuk{border-style:solid;border-color:#d9628f;color:var(--rose)}
+.skor{font-size:1.9rem;letter-spacing:.15em;margin:.8rem 0 .2rem}

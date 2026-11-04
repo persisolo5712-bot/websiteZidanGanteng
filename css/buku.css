@@ -37,7 +37,7 @@
 /* kolase */
 .pol{position:absolute;width:41%;background:#fff;padding:3.5% 3.5% 0;border-radius:3px;
   box-shadow:0 6px 14px rgba(150,70,100,.22);transition:transform .3s}
-.pol:hover{transform:scale(1.07) rotate(0deg)!important;z-index:5}
+@media (hover:hover){.pol:hover{transform:scale(1.07) rotate(0deg)!important;z-index:5}}
 .pol .ph{aspect-ratio:1;width:100%;overflow:hidden;display:grid;place-items:center;background:linear-gradient(135deg,#ffdbe7,#eadcff);font-size:1.6rem}
 .pol img{width:100%;height:100%;object-fit:cover;display:block}
 .pol .cap{font-family:'Caveat',cursive;font-size:calc(var(--w)*.065);text-align:center;padding:5% 0 6%;color:var(--ink);line-height:1.05;overflow-wrap:anywhere}
@@ -82,3 +82,8 @@
 #galeri.satu .g-nav{display:none}
 .g-hitung{position:absolute;bottom:18px;left:0;right:0;text-align:center;color:#ffd3e1;font:700 .75rem 'DM Sans',sans-serif;letter-spacing:.2em}
 @media (max-width:600px){.g-nav{top:auto;bottom:12px;margin:0}.g-prev{left:22%}.g-next{right:22%}}
+
+/* sentuhan: hanya halaman yang tampak yang aktif */
+.leaf,.endpage,.face{pointer-events:none}
+.face.aktif,.face.aktif *{pointer-events:auto}
+.face.aktif{cursor:pointer}

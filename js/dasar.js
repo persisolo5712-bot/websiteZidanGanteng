@@ -1,6 +1,6 @@
 /* ===== Dipakai semua halaman: background, confetti, pindah halaman, umur ===== */
 const BULAN = ['Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember'];
-const TOTAL_HAL = 4;
+const TOTAL_HAL = 9;
 /* HP / perangkat kentang -> efek dikurangi biar tetap mulus */
 const RINGAN = matchMedia('(max-width:700px)').matches || (navigator.hardwareConcurrency || 8) <= 4;
 if (RINGAN) document.documentElement.classList.add('ringan');

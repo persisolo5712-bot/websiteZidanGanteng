@@ -28,12 +28,21 @@ function cariFoto(nomor, ph, el){
     img.src = `${CONFIG.folderFoto}/${nomor}.${ext[k]}`;
   })();
 }
+function polDiTitik(face, x, y){
+  const pad = 8;                                  // toleransi jari (px)
+  for(const el of face.querySelectorAll('.pol')){
+    const r = el.getBoundingClientRect();
+    if(x >= r.left-pad && x <= r.right+pad && y >= r.top-pad && y <= r.bottom+pad) return el;
+  }
+  return null;
+}
 function pol(i,pos){
   const el = document.createElement('div');
   el.className = 'pol';
   el.style.cssText = `left:${pos.l}%;top:${pos.t}%;transform:rotate(${pos.r}deg)`;
   el.innerHTML = `<div class="ph">📷</div><div class="cap">${CONFIG.caption[i] || ''}</div>`;
   cariFoto(i+1, el.querySelector('.ph'), el);
+  el._i = i;
   el.addEventListener('click', e => { e.stopPropagation(); if(GALERI[i]) bukaGaleri(i); });
   return el;
 }
@@ -68,8 +77,15 @@ for(let i=0;i<LEAVES;i++){
   if(i === LEAVES-1){
     back.innerHTML = `<div class="akhir"><div class="pita">🎀</div><h2>${END_TEXT}</h2><p>masih banyak cerita yang belum ditulis.</p></div>`;
   } else back.appendChild(collage(page++));
-  leaf.append(front,back);
-  leaf.addEventListener('click', () => go(leaf.classList.contains('flipped') ? -1 : 1));
+  leaf.append(front,back); leaf._f = front; leaf._b = back;
+  leaf.addEventListener('click', e => {
+    // Di HP, browser kadang "membetulkan" tap di elemen 3D ke bingkai halaman, bukan ke fotonya.
+    // Jadi kita cek koordinat tap-nya sendiri: kalau jatuh di area foto -> buka galeri, bukan balik halaman.
+    const face = e.target.closest && e.target.closest('.face');
+    const el = face && polDiTitik(face, e.clientX, e.clientY);
+    if(el){ if(GALERI[el._i]) bukaGaleri(el._i); return; }
+    go(leaf.classList.contains('flipped') ? -1 : 1);
+  });
   book.appendChild(leaf); leaves.push(leaf);
 }
 const end = document.createElement('div');
@@ -77,11 +93,16 @@ end.className = 'endpage';
 book.appendChild(end);
 
 function render(){
-  leaves.forEach((l,i) => l.classList.toggle('flipped', i<p));
+  leaves.forEach((l,i) => {
+    l.classList.toggle('flipped', i<p);
+    // cuma 2 halaman yang kelihatan yang boleh nerima sentuhan (hit-test 3D di HP suka salah sasaran)
+    l._f.classList.toggle('aktif', i===p);
+    l._b.classList.toggle('aktif', i===p-1);
+  });
   book.classList.toggle('open', p>0 && p<LEAVES);
   book.classList.toggle('end', p===LEAVES);
   document.getElementById('prev').disabled = p===0;
-  document.getElementById('next').disabled = p===LEAVES;
+  document.getElementById('next').textContent = p===LEAVES ? 'Lanjut ✨' : 'Lanjut ›';
   document.getElementById('count').textContent = String(p).padStart(2,'0') + ' / ' + String(LEAVES).padStart(2,'0');
 }
 function zs(from,to){
@@ -90,12 +111,15 @@ function zs(from,to){
   leaves[moving].style.zIndex = 50;
   setTimeout(() => leaves.forEach((l,i) => l.style.zIndex = i<p ? i : LEAVES-i), 650);
 }
+let kunciSampai = 0;
 function go(d){
   const n = p+d; if(n<0||n>LEAVES) return;
+  if(performance.now() < kunciSampai) return;      // abaikan tap beruntun saat halaman masih berputar
+  kunciSampai = performance.now() + 500;
   const old = p; p = n; zs(old,n); render();
 }
 leaves.forEach((l,i) => l.style.zIndex = LEAVES-i);
-document.getElementById('next').onclick = () => go(1);
+document.getElementById('next').onclick = () => p===LEAVES ? pindah('kuis.html') : go(1);
 document.getElementById('prev').onclick = () => go(-1);
 addEventListener('keydown', e => { if(e.key==='ArrowRight') go(1); if(e.key==='ArrowLeft') go(-1); });
 render();

@@ -1,0 +1,11 @@
+/* ===== Page 6: kupon kerok ===== */
+.hadiah{width:min(92vw,520px);padding-top:2.2rem}
+.kupon-wrap{display:flex;flex-direction:column;gap:.8rem;margin:.2rem 0}
+.kupon{position:relative;height:84px;border-radius:16px;background:#fff;border:2px dashed #f2a0bd;display:grid;place-items:center;overflow:hidden;
+  user-select:none;-webkit-user-select:none;transition:border-color .4s,box-shadow .4s}
+.kupon .isi{text-align:center;padding:0 .8rem;line-height:1.1}
+.kupon small{display:block;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:#c46a90}
+.kupon b{font:600 1.4rem 'Caveat',cursive;color:var(--ink)}
+.kupon canvas{position:absolute;inset:0;width:100%;height:100%;touch-action:none;cursor:crosshair;transition:opacity .7s}
+.kupon canvas.hilang{opacity:0;pointer-events:none}
+.kupon.buka{border-style:solid;border-color:#d9628f;box-shadow:0 0 0 3px rgba(217,98,143,.15)}

@@ -48,3 +48,11 @@ body.keluar .page{animation:keluar .55s ease-in forwards;pointer-events:none}
 .ringan .card{box-shadow:0 0 0 4px rgba(255,255,255,.55),0 12px 24px rgba(180,80,120,.16)}
 .ringan .kertas{box-shadow:0 4px 8px rgba(150,70,110,.18)}
 .ringan .pol{box-shadow:0 3px 6px rgba(150,70,110,.2)}
+
+/* ===== Komponen bersama untuk page 5-9 ===== */
+.card h2{font-family:'Playfair Display',serif;font-size:clamp(1.4rem,5.5vw,1.9rem);line-height:1.2;margin-bottom:.4rem}
+.sub{font-size:.8rem;color:#a77389;margin-bottom:1.1rem}
+.komentar{font-family:'Caveat',cursive;font-size:1.5rem;color:var(--rose);margin-top:.8rem;min-height:1.6em}
+.cta:disabled{opacity:.5;cursor:default;box-shadow:0 5px 0 #d9a3b8;animation:none}
+.lewati{display:block;margin:.7rem auto 0;border:0;background:none;color:#c98aa5;font:700 .75rem 'DM Sans',sans-serif;cursor:pointer;padding:.4rem .8rem}
+@keyframes geleng{20%,60%{transform:translateX(-7px) rotate(-1deg)}40%,80%{transform:translateX(7px) rotate(1deg)}}

@@ -1,0 +1,21 @@
+/* ===== Page 9: The End ===== */
+.tamat{width:min(92vw,500px);padding-top:2.2rem}
+.tamat h1{font:700 clamp(2.4rem,10vw,3.4rem)/1 'Playfair Display',serif;margin:.1rem 0 .5rem}
+.tamat h1 span{color:var(--rose)}
+.kredit{height:128px;overflow:hidden;margin:0 auto .7rem;-webkit-mask-image:linear-gradient(transparent,#000 20%,#000 80%,transparent);mask-image:linear-gradient(transparent,#000 20%,#000 80%,transparent)}
+.kredit-isi{animation:gulung 20s linear infinite;will-change:transform}
+@keyframes gulung{from{transform:translateY(60px)}to{transform:translateY(-100%)}}
+.judul-kredit{font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;font-weight:700;color:#c46a90;margin:1rem 0 .3rem}
+.peran{display:flex;align-items:center;justify-content:center;gap:.8rem;margin:.45rem 0;text-align:left;font-size:.8rem;color:#8d5a6e}
+.peran img,.peran .em{width:46px;height:38px;object-fit:contain;flex:none;display:grid;place-items:center;font-size:1.7rem}
+.peran b{display:block;color:var(--ink);font-size:.92rem}
+.msg{font-size:.86rem;line-height:1.55;color:#8d5a6e;max-width:38ch;margin:0 auto .8rem}
+.hitung{display:flex;justify-content:center;gap:.55rem}
+.hitung div{background:#fff;border:2px dashed #f2a0bd;border-radius:14px;padding:.45rem .3rem;min-width:62px}
+.hitung b{display:block;font:700 1.5rem 'Playfair Display',serif;color:var(--rose);font-variant-numeric:tabular-nums}
+.hitung small{font-size:.56rem;letter-spacing:.14em;text-transform:uppercase;color:#a77389;font-weight:700}
+.hitung .hari-ini{min-width:0;border:0;background:none;font:700 1.1rem 'DM Sans',sans-serif;color:var(--rose)}
+.aksi{display:flex;flex-direction:column;gap:.7rem;align-items:center;margin-top:.3rem}
+@media (min-width:460px){.aksi{flex-direction:row;justify-content:center}}
+.aksi .cta{width:auto;padding:.85rem 1.4rem;font-size:.9rem}
+@media (max-height:700px){.kredit{height:96px}}

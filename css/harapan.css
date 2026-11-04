@@ -1,0 +1,13 @@
+/* ===== Page 7: tulis harapan, diterbangkan balon ===== */
+.harapan{width:min(92vw,480px);padding-top:2.2rem}
+.tulis{display:flex;flex-direction:column;gap:.7rem}
+@media (min-width:440px){.tulis{flex-direction:row}}
+#wish{flex:1;min-width:0;border:2px dashed #f2a0bd;border-radius:16px;padding:.8rem 1rem;font:500 16px 'DM Sans',sans-serif;color:var(--ink);background:#fff;outline:none}
+#wish:focus{border-style:solid;border-color:#d9628f}
+#wish.goyang{animation:geleng .45s}
+#langit{position:fixed;inset:0;z-index:4;pointer-events:none;overflow:hidden}
+.balon{position:absolute;left:0;bottom:-240px;width:112px;min-height:132px;padding:1rem .7rem;border-radius:50% 50% 48% 48%;display:grid;place-items:center;text-align:center;
+  background:radial-gradient(circle at 32% 26%,rgba(255,255,255,.7),transparent 30%),var(--c);box-shadow:inset -6px -8px 12px rgba(0,0,0,.07);
+  font:600 1.05rem/1.05 'Caveat',cursive;color:#5a3350;overflow-wrap:anywhere;will-change:transform}
+.balon::after{content:"";position:absolute;top:100%;left:50%;width:1px;height:70px;background:rgba(150,90,110,.45)}
+.ringan .balon{box-shadow:none}
